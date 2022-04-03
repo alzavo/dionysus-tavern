@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>@User.Claims.FirstOrDefault()!.Value</p>
+<p>@User.Claims.FirstOrDefault()!.ValueType</p>
+<p>@User.Claims.FirstOrDefault()!.Type</p>
+
+<h4>JWT</h4>
+@Html.Raw(Extensions.Base.IdentityExtensions.GenerateGwt(
+    User.Claims, 
+    "l;djiawpojidfa;sf.hal_sdkajdsj.KAKHHS", 
+    "itcollege.taltech.ee", 
+    "itcollege.taltech.ee", 
+    DateTime.Now.AddDays(30)))
+    
